@@ -36,12 +36,12 @@ exports.defaultConfig = require('./plot_api/plot_config');
 exports.Plots = require('./plots/plots');
 exports.Axes = require('./plots/cartesian/axes');
 exports.Fx = require('./plots/cartesian/graph_interact');
-exports.Scene = require('./plots/gl3d/scene');
-exports.Gl3dLayout = require('./plots/gl3d/layout');
-exports.Geo = require('./plots/geo/geo');
-exports.GeoLayout = require('./plots/geo/layout');
-exports.Scene2D = require('./plots/gl2d/scene2d');
-exports.micropolar = require('./plots/polar/micropolar');
+// exports.Scene = require('./plots/gl3d/scene');
+// exports.Gl3dLayout = require('./plots/gl3d/layout');
+// exports.Geo = require('./plots/geo/geo');
+// exports.GeoLayout = require('./plots/geo/layout');
+// exports.Scene2D = require('./plots/gl2d/scene2d');
+// exports.micropolar = require('./plots/polar/micropolar');
 
 // components
 exports.Color = require('./components/color');
@@ -57,18 +57,18 @@ exports.ModeBar = require('./components/modebar');
 
 // traces
 exports.Scatter = require('./traces/scatter');
-exports.Bars = require('./traces/bars');
-exports.Boxes = require('./traces/boxes');
-exports.Heatmap = require('./traces/heatmap');
-exports.Histogram = require('./traces/histogram');
-exports.Pie = require('./traces/pie');
-exports.Contour = require('./traces/contour');
-exports.Scatter3D = require('./traces/scatter3d');
-exports.Surface = require('./traces/surface');
-exports.Mesh3D = require('./traces/mesh3d');
-exports.ScatterGeo = require('./traces/scattergeo');
-exports.Choropleth = require('./traces/choropleth');
-exports.ScatterGl = require('./traces/scattergl');
+// exports.Bars = require('./traces/bars');
+// exports.Boxes = require('./traces/boxes');
+// exports.Heatmap = require('./traces/heatmap');
+// exports.Histogram = require('./traces/histogram');
+// exports.Pie = require('./traces/pie');
+// exports.Contour = require('./traces/contour');
+// exports.Scatter3D = require('./traces/scatter3d');
+// exports.Surface = require('./traces/surface');
+// exports.Mesh3D = require('./traces/mesh3d');
+// exports.ScatterGeo = require('./traces/scattergeo');
+// exports.Choropleth = require('./traces/choropleth');
+// exports.ScatterGl = require('./traces/scattergl');
 
 // plot api
 require('./plot_api/plot_api');
