@@ -36,6 +36,7 @@
     "start-test_dashboard": "node devtools/test_dashboard/server.js",
     "start-image_viewer": "node devtools/image_viewer/server.js",
     "baseline": "./tasks/baseline.sh",
+    "bench": "karma start bench/karma.conf.js",
     "version": "npm run build && git add -A dist",
     "postversion": "git push && git push --tags"
   },
