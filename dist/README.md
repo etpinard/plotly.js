@@ -64,6 +64,7 @@ It be can imported as minified javascript
 - using CDN URL https://cdn.plot.ly/plotly-latest.min.js OR https://cdn.plot.ly/plotly-1.38.0.min.js
 
 or as raw javascript:
+- using the `plotly.js-dist` npm package (starting in `v1.39.0`)
 - using dist file `dist/plotly.js`
 - using CDN URL https://cdn.plot.ly/plotly-latest.js OR https://cdn.plot.ly/plotly-1.38.0.js
 - using CommonJS with `require('plotly.js')`
@@ -88,131 +89,328 @@ Starting in `v1.15.0`, plotly.js also ships with several _partial_ bundles:
 - [mapbox](#plotlyjs-mapbox)
 - [finance](#plotlyjs-finance)
 
+Starting in `v1.39.0`, each plotly.js partial bundle has a corresponding npm package with no dependency.
 ### plotly.js basic
 
-The `basic` partial bundle contains the `scatter`, `bar` and `pie` trace modules.
+The `basic` partial bundle contains trace modules `scatter`, `bar` and `pie`.
 
-| Way to import | Location |
-|---------------|----------|
-| dist bundle | `dist/plotly-basic.js` |
-| dist bundle (minified) | `dist/plotly-basic.min.js` |
-| CDN URL (latest) | https://cdn.plot.ly/plotly-basic-latest.js |
-| CDN URL (latest minified) | https://cdn.plot.ly/plotly-basic-latest.min.js |
-| CDN URL (tagged) | https://cdn.plot.ly/plotly-basic-1.38.0.js |
-| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-basic-1.38.0.min.js |
-| CommonJS | `require('plotly.js/lib/index-basic')` |
+#### Stats
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
 | 2.1 MB | 749.5 kB | 244.1 kB |
 
-### plotly.js cartesian
+#### CDN links
 
-The `cartesian` partial bundle contains the `scatter`, `bar`, `box`, `heatmap`, `histogram`, `histogram2d`, `histogram2dcontour`, `pie`, `contour`, `scatterternary` and `violin` trace modules.
+| Flavor | URL |
+| ------ | --- |
+| CDN URL (latest) | https://cdn.plot.ly/plotly-basic-latest.js |
+| CDN URL (latest minified) | https://cdn.plot.ly/plotly-basic-latest.min.js |
+| CDN URL (tagged) | https://cdn.plot.ly/plotly-basic-1.38.0.js |
+| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-basic-1.38.0.min.js |
+
+#### npm package (starting in `v1.39.0`)
+
+Install with
+```
+npm install plotly.js-basic-dist
+```
+
+ES6 module usage:
+```js
+import Plotly from 'plotly.js-basic-dist'
+```
+
+CommonJS usage:
+```js
+var Plotly = require('plotly.js-basic-dist');
+```
+
+#### plotly.js dist files
 
 | Way to import | Location |
 |---------------|----------|
-| dist bundle | `dist/plotly-cartesian.js` |
-| dist bundle (minified) | `dist/plotly-cartesian.min.js` |
-| CDN URL (latest) | https://cdn.plot.ly/plotly-cartesian-latest.js |
-| CDN URL (latest minified) | https://cdn.plot.ly/plotly-cartesian-latest.min.js |
-| CDN URL (tagged) | https://cdn.plot.ly/plotly-cartesian-1.38.0.js |
-| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-cartesian-1.38.0.min.js |
-| CommonJS | `require('plotly.js/lib/index-cartesian')` |
+| dist bundle | `dist/plotly-basic.js` |
+| dist bundle (minified) | `dist/plotly-basic.min.js` |
+| ES6 module | `import Plotly from 'plotly.js/lib/index-basic'` |
+| CommonJS | `require('plotly.js/lib/index-basic')` |
+
+
+### plotly.js cartesian
+
+The `cartesian` partial bundle contains trace modules `scatter`, `bar`, `box`, `heatmap`, `histogram`, `histogram2d`, `histogram2dcontour`, `pie`, `contour`, `scatterternary` and `violin`.
+
+#### Stats
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
 | 2.4 MB | 860.6 kB | 278.7 kB |
 
-### plotly.js geo
+#### CDN links
 
-The `geo` partial bundle contains the `scatter`, `scattergeo` and `choropleth` trace modules.
+| Flavor | URL |
+| ------ | --- |
+| CDN URL (latest) | https://cdn.plot.ly/plotly-cartesian-latest.js |
+| CDN URL (latest minified) | https://cdn.plot.ly/plotly-cartesian-latest.min.js |
+| CDN URL (tagged) | https://cdn.plot.ly/plotly-cartesian-1.38.0.js |
+| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-cartesian-1.38.0.min.js |
+
+#### npm package (starting in `v1.39.0`)
+
+Install with
+```
+npm install plotly.js-cartesian-dist
+```
+
+ES6 module usage:
+```js
+import Plotly from 'plotly.js-cartesian-dist'
+```
+
+CommonJS usage:
+```js
+var Plotly = require('plotly.js-cartesian-dist');
+```
+
+#### plotly.js dist files
 
 | Way to import | Location |
 |---------------|----------|
-| dist bundle | `dist/plotly-geo.js` |
-| dist bundle (minified) | `dist/plotly-geo.min.js` |
-| CDN URL (latest) | https://cdn.plot.ly/plotly-geo-latest.js |
-| CDN URL (latest minified) | https://cdn.plot.ly/plotly-geo-latest.min.js |
-| CDN URL (tagged) | https://cdn.plot.ly/plotly-geo-1.38.0.js |
-| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-geo-1.38.0.min.js |
-| CommonJS | `require('plotly.js/lib/index-geo')` |
+| dist bundle | `dist/plotly-cartesian.js` |
+| dist bundle (minified) | `dist/plotly-cartesian.min.js` |
+| ES6 module | `import Plotly from 'plotly.js/lib/index-cartesian'` |
+| CommonJS | `require('plotly.js/lib/index-cartesian')` |
+
+
+### plotly.js geo
+
+The `geo` partial bundle contains trace modules `scatter`, `scattergeo` and `choropleth`.
+
+#### Stats
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
 | 2.1 MB | 773.2 kB | 253.2 kB |
 
-### plotly.js gl3d
+#### CDN links
 
-The `gl3d` partial bundle contains the `scatter`, `scatter3d`, `surface`, `mesh3d` and `cone` trace modules.
+| Flavor | URL |
+| ------ | --- |
+| CDN URL (latest) | https://cdn.plot.ly/plotly-geo-latest.js |
+| CDN URL (latest minified) | https://cdn.plot.ly/plotly-geo-latest.min.js |
+| CDN URL (tagged) | https://cdn.plot.ly/plotly-geo-1.38.0.js |
+| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-geo-1.38.0.min.js |
+
+#### npm package (starting in `v1.39.0`)
+
+Install with
+```
+npm install plotly.js-geo-dist
+```
+
+ES6 module usage:
+```js
+import Plotly from 'plotly.js-geo-dist'
+```
+
+CommonJS usage:
+```js
+var Plotly = require('plotly.js-geo-dist');
+```
+
+#### plotly.js dist files
 
 | Way to import | Location |
 |---------------|----------|
-| dist bundle | `dist/plotly-gl3d.js` |
-| dist bundle (minified) | `dist/plotly-gl3d.min.js` |
-| CDN URL (latest) | https://cdn.plot.ly/plotly-gl3d-latest.js |
-| CDN URL (latest minified) | https://cdn.plot.ly/plotly-gl3d-latest.min.js |
-| CDN URL (tagged) | https://cdn.plot.ly/plotly-gl3d-1.38.0.js |
-| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-gl3d-1.38.0.min.js |
-| CommonJS | `require('plotly.js/lib/index-gl3d')` |
+| dist bundle | `dist/plotly-geo.js` |
+| dist bundle (minified) | `dist/plotly-geo.min.js` |
+| ES6 module | `import Plotly from 'plotly.js/lib/index-geo'` |
+| CommonJS | `require('plotly.js/lib/index-geo')` |
+
+
+### plotly.js gl3d
+
+The `gl3d` partial bundle contains trace modules `scatter`, `scatter3d`, `surface`, `mesh3d` and `cone`.
+
+#### Stats
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
 | 3.1 MB | 1.2 MB | 392.7 kB |
 
-### plotly.js gl2d
+#### CDN links
 
-The `gl2d` partial bundle contains the `scatter`, `scattergl`, `splom`, `pointcloud`, `heatmapgl`, `contourgl` and `parcoords` trace modules.
+| Flavor | URL |
+| ------ | --- |
+| CDN URL (latest) | https://cdn.plot.ly/plotly-gl3d-latest.js |
+| CDN URL (latest minified) | https://cdn.plot.ly/plotly-gl3d-latest.min.js |
+| CDN URL (tagged) | https://cdn.plot.ly/plotly-gl3d-1.38.0.js |
+| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-gl3d-1.38.0.min.js |
+
+#### npm package (starting in `v1.39.0`)
+
+Install with
+```
+npm install plotly.js-gl3d-dist
+```
+
+ES6 module usage:
+```js
+import Plotly from 'plotly.js-gl3d-dist'
+```
+
+CommonJS usage:
+```js
+var Plotly = require('plotly.js-gl3d-dist');
+```
+
+#### plotly.js dist files
 
 | Way to import | Location |
 |---------------|----------|
-| dist bundle | `dist/plotly-gl2d.js` |
-| dist bundle (minified) | `dist/plotly-gl2d.min.js` |
-| CDN URL (latest) | https://cdn.plot.ly/plotly-gl2d-latest.js |
-| CDN URL (latest minified) | https://cdn.plot.ly/plotly-gl2d-latest.min.js |
-| CDN URL (tagged) | https://cdn.plot.ly/plotly-gl2d-1.38.0.js |
-| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-gl2d-1.38.0.min.js |
-| CommonJS | `require('plotly.js/lib/index-gl2d')` |
+| dist bundle | `dist/plotly-gl3d.js` |
+| dist bundle (minified) | `dist/plotly-gl3d.min.js` |
+| ES6 module | `import Plotly from 'plotly.js/lib/index-gl3d'` |
+| CommonJS | `require('plotly.js/lib/index-gl3d')` |
+
+
+### plotly.js gl2d
+
+The `gl2d` partial bundle contains trace modules `scatter`, `scattergl`, `splom`, `pointcloud`, `heatmapgl`, `contourgl` and `parcoords`.
+
+#### Stats
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
 | 3.1 MB | 1.3 MB | 411.4 kB |
 
-### plotly.js mapbox
+#### CDN links
 
-The `mapbox` partial bundle contains the `scatter` and `scattermapbox` trace modules.
+| Flavor | URL |
+| ------ | --- |
+| CDN URL (latest) | https://cdn.plot.ly/plotly-gl2d-latest.js |
+| CDN URL (latest minified) | https://cdn.plot.ly/plotly-gl2d-latest.min.js |
+| CDN URL (tagged) | https://cdn.plot.ly/plotly-gl2d-1.38.0.js |
+| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-gl2d-1.38.0.min.js |
+
+#### npm package (starting in `v1.39.0`)
+
+Install with
+```
+npm install plotly.js-gl2d-dist
+```
+
+ES6 module usage:
+```js
+import Plotly from 'plotly.js-gl2d-dist'
+```
+
+CommonJS usage:
+```js
+var Plotly = require('plotly.js-gl2d-dist');
+```
+
+#### plotly.js dist files
 
 | Way to import | Location |
 |---------------|----------|
-| dist bundle | `dist/plotly-mapbox.js` |
-| dist bundle (minified) | `dist/plotly-mapbox.min.js` |
-| CDN URL (latest) | https://cdn.plot.ly/plotly-mapbox-latest.js |
-| CDN URL (latest minified) | https://cdn.plot.ly/plotly-mapbox-latest.min.js |
-| CDN URL (tagged) | https://cdn.plot.ly/plotly-mapbox-1.38.0.js |
-| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-mapbox-1.38.0.min.js |
-| CommonJS | `require('plotly.js/lib/index-mapbox')` |
+| dist bundle | `dist/plotly-gl2d.js` |
+| dist bundle (minified) | `dist/plotly-gl2d.min.js` |
+| ES6 module | `import Plotly from 'plotly.js/lib/index-gl2d'` |
+| CommonJS | `require('plotly.js/lib/index-gl2d')` |
+
+
+### plotly.js mapbox
+
+The `mapbox` partial bundle contains trace modules `scatter` and `scattermapbox`.
+
+#### Stats
 
 | Raw size | Minified size | Minified + gzip size |
 |------|-----------------|------------------------|
 | 3.4 MB | 1.3 MB | 396.3 kB |
 
+#### CDN links
+
+| Flavor | URL |
+| ------ | --- |
+| CDN URL (latest) | https://cdn.plot.ly/plotly-mapbox-latest.js |
+| CDN URL (latest minified) | https://cdn.plot.ly/plotly-mapbox-latest.min.js |
+| CDN URL (tagged) | https://cdn.plot.ly/plotly-mapbox-1.38.0.js |
+| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-mapbox-1.38.0.min.js |
+
+#### npm package (starting in `v1.39.0`)
+
+Install with
+```
+npm install plotly.js-mapbox-dist
+```
+
+ES6 module usage:
+```js
+import Plotly from 'plotly.js-mapbox-dist'
+```
+
+CommonJS usage:
+```js
+var Plotly = require('plotly.js-mapbox-dist');
+```
+
+#### plotly.js dist files
+
+| Way to import | Location |
+|---------------|----------|
+| dist bundle | `dist/plotly-mapbox.js` |
+| dist bundle (minified) | `dist/plotly-mapbox.min.js` |
+| ES6 module | `import Plotly from 'plotly.js/lib/index-mapbox'` |
+| CommonJS | `require('plotly.js/lib/index-mapbox')` |
+
+
 ### plotly.js finance
 
-The `finance` partial bundle contains the `scatter`, `bar`, `histogram`, `pie`, `ohlc` and `candlestick` trace modules.
+The `finance` partial bundle contains trace modules `scatter`, `bar`, `histogram`, `pie`, `ohlc` and `candlestick`.
+
+#### Stats
+
+| Raw size | Minified size | Minified + gzip size |
+|------|-----------------|------------------------|
+| 2.2 MB | 779.6 kB | 253.1 kB |
+
+#### CDN links
+
+| Flavor | URL |
+| ------ | --- |
+| CDN URL (latest) | https://cdn.plot.ly/plotly-finance-latest.js |
+| CDN URL (latest minified) | https://cdn.plot.ly/plotly-finance-latest.min.js |
+| CDN URL (tagged) | https://cdn.plot.ly/plotly-finance-1.38.0.js |
+| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-finance-1.38.0.min.js |
+
+#### npm package (starting in `v1.39.0`)
+
+Install with
+```
+npm install plotly.js-finance-dist
+```
+
+ES6 module usage:
+```js
+import Plotly from 'plotly.js-finance-dist'
+```
+
+CommonJS usage:
+```js
+var Plotly = require('plotly.js-finance-dist');
+```
+
+#### plotly.js dist files
 
 | Way to import | Location |
 |---------------|----------|
 | dist bundle | `dist/plotly-finance.js` |
 | dist bundle (minified) | `dist/plotly-finance.min.js` |
-| CDN URL (latest) | https://cdn.plot.ly/plotly-finance-latest.js |
-| CDN URL (latest minified) | https://cdn.plot.ly/plotly-finance-latest.min.js |
-| CDN URL (tagged) | https://cdn.plot.ly/plotly-finance-1.38.0.js |
-| CDN URL (tagged minified) | https://cdn.plot.ly/plotly-finance-1.38.0.min.js |
+| ES6 module | `import Plotly from 'plotly.js/lib/index-finance'` |
 | CommonJS | `require('plotly.js/lib/index-finance')` |
 
-| Raw size | Minified size | Minified + gzip size |
-|------|-----------------|------------------------|
-| 2.2 MB | 779.6 kB | 253.1 kB |
 
 ----------------
 

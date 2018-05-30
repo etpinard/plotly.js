@@ -1,0 +1,22 @@
+{
+  "name": "plotly.js-geo-dist",
+  "version": "1.38.0",
+  "description": "Ready-to-use plotly.js geo distributed bundle.",
+  "license": "MIT",
+  "main": "plotly-geo.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plotly/plotly.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/plotly/plotly.js/issues"
+  },
+  "author": "Plotly, Inc.",
+  "keywords": [
+    "graphing",
+    "plotting",
+    "data",
+    "visualization",
+    "plotly"
+  ]
+}
