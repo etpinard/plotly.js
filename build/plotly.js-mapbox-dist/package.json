@@ -18,5 +18,10 @@
     "data",
     "visualization",
     "plotly"
+  ],
+  "files": [
+    "LICENSE",
+    "README.md",
+    "plotly-mapbox.js"
   ]
 }
