@@ -129,7 +129,7 @@ function getMainBundleInfo() {
         '',
         constants.partialBundlePaths.map(makeBundleHeaderInfo).join('\n'),
         '',
-        'Starting in `v1.39.0`, each plotly.js partial bundle has a corresponding npm package with no dependency.'
+        'Starting in `v1.39.0`, each plotly.js partial bundle has a corresponding npm package with no dependencies.'
     ];
 }
 
@@ -174,14 +174,14 @@ function makeBundleInfo(pathObj) {
         '',
         '| Flavor | URL |',
         '| ------ | --- |',
-        '| CDN URL (latest) | ' + cdnRoot + name + '-latest' + JS + ' |',
-        '| CDN URL (latest minified) | ' + cdnRoot + name + '-latest' + MINJS + ' |',
-        '| CDN URL (tagged) | ' + cdnRoot + name + '-' + pkg.version + JS + ' |',
-        '| CDN URL (tagged minified) | ' + cdnRoot + name + '-' + pkg.version + MINJS + ' |',
+        '| Latest | ' + cdnRoot + name + '-latest' + JS + ' |',
+        '| Latest minified | ' + cdnRoot + name + '-latest' + MINJS + ' |',
+        '| Tagged | ' + cdnRoot + name + '-' + pkg.version + JS + ' |',
+        '| Tagged minified | ' + cdnRoot + name + '-' + pkg.version + MINJS + ' |',
         '',
         '#### npm package (starting in `v1.39.0`)',
         '',
-        'Install with',
+        'Install [`' + pkgName + '`](https://www.npmjs.com/package/' + pkgName + ') with',
         '```',
         'npm install ' + pkgName,
         '```',
@@ -196,9 +196,9 @@ function makeBundleInfo(pathObj) {
         'var Plotly = require(\'' + pkgName + '\');',
         '```',
         '',
-        '#### plotly.js dist files',
+        '#### Other plotly.js entry points',
         '',
-        '| Way to import | Location |',
+        '| Flavor | Location |',
         '|---------------|----------|',
         '| dist bundle | ' + '`dist/plotly-' + name + JS + '` |',
         '| dist bundle (minified) | ' + '`dist/plotly-' + name + MINJS + '` |',

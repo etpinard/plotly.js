@@ -46,12 +46,17 @@ packagesSpecs.forEach(function(d) {
             repository: pkg.repository,
             bugs: pkg.bugs,
             author: pkg.author,
-            keywords: pkg.keywords
+            keywords: pkg.keywords,
+            files: [
+                'LICENSE',
+                'README.md',
+                d.main
+            ]
         };
 
         fs.writeFile(
             path.join(pkgPath, 'package.json'),
-            JSON.stringify(cnt, null, 2),
+            JSON.stringify(cnt, null, 2) + '\n',
             cb
         );
     }
@@ -100,8 +105,16 @@ packagesSpecs.forEach(function(d) {
         );
     }
 
-    function copyDist(cb) {
+    function copyMain(cb) {
         fs.copy(d.dist, path.join(pkgPath, d.main), cb);
+    }
+
+    function copyLicense(cb) {
+        fs.copy(
+            path.join(constants.pathToRoot, 'LICENSE'),
+            path.join(pkgPath, 'LICENSE'),
+            cb
+        );
     }
 
     function publishToNPM(cb) {
@@ -117,7 +130,8 @@ packagesSpecs.forEach(function(d) {
         initDirectory,
         writePackageJSON,
         writeREADME,
-        copyDist,
+        copyMain,
+        copyLicense,
         publishToNPM
     ], function(err) {
         if(err) throw err;
